@@ -1,17 +1,17 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Traits\Relationship\HasManyDependenceRelationship;
 
 class Manager extends Model
 {
     //
+    use HasManyDependenceRelationship;
+
     protected $fillable = [
         'name', 'lastname', 'phone', 'cellphone', 'title_job', 'email'
     ];
 
-    public function dependences(){
-        return $this->belongsToMany(Dependence::class);
-    }
 }

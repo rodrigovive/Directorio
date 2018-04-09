@@ -1,18 +1,18 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Traits\Relationship\HasDependenceRelationship;
+
 
 class NatureDependence extends Model
 {
     //
+    use HasDependenceRelationship;
+
     protected $fillable = [
         'name',
     ];
-
-    public function dependences()
-    {
-        return $this->hasMany(Dependence::class);
-    }
+    
 }
