@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Backend\Dependence;
 
 use App\NatureDependence;
 use Illuminate\Http\Request;

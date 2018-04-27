@@ -1,9 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Backend\Dependence;
 
-use App\CategoryDependence;
+use Validator;
+use App\Models\CategoryDependence;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+
 
 class CategoryDependenceController extends Controller
 {
@@ -15,6 +18,7 @@ class CategoryDependenceController extends Controller
     public function index()
     {
         //
+        return view('backend.types.index');
     }
 
     /**
@@ -36,6 +40,27 @@ class CategoryDependenceController extends Controller
     public function store(Request $request)
     {
         //
+        $dataResponse = [
+            'name' => $request->name,
+        ];
+        $rules = [
+            'name' => 'required|max:255',
+        ];
+        $messages = [
+            'name'    => 'El nombre no esta completado.',
+        ];
+        $validator = Validator::make($dataResponse, $rules, $messages);
+
+        if ($validator->fails()) {
+            return response()->json(['error'=>$validator->errors()]);
+        }
+        $dependenceCategoryCreated = CategoryDependence::create($dataResponse);
+
+        if($dependenceCategoryCreated){
+            return response()->json(["success" => "Registro de la dependencia exitosa"]);
+        } else {
+            return response()->json(["error" => "Error ocurrido al guardar ", "err" => $dependenceCategoryCreated]);
+        }
     }
 
     /**

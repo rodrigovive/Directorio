@@ -13,6 +13,6 @@ class Dependence extends Model
      * @var array
      */
     protected $fillable = [
-      'email', 'annex', 'phone', 'code_dependence', 'category_id', 'level_id'
+      'email', 'annex', 'phone', 'code_dependence', 'category_id', 'level_id', 'acronym', 'description', 'dependence' 
     ];
 }

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.1/css/responsive.bootstrap4.min.css">
+
+  <title>Dashboard Directorio</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-toggleable-sm navbar-inverse bg-inverse p-0">
+    <div class="container">
+      <button class="navbar-toggler navbar-toggler-right" data-toggle="collapse" data-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a href="index.html" class="navbar-brand mr-3">Directorio UNJBG</a>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item px-2">
+            <a href="index.html" class="nav-link">Dashboard</a>
+          </li>
+          <li class="nav-item px-2">
+            <a href="dependences.html" class="nav-link">Dependencias</a>
+          </li>
+          <li class="nav-item px-2">
+            <a href="personal.html" class="nav-link active">Personal</a>
+          </li>
+          <li class="nav-item px-2">
+            <a href="types.html" class="nav-link">Tipos</a>
+          </li>
+          <li class="nav-item px-2">
+            <a href="users.html" class="nav-link">Usuarios</a>
+          </li>
+        </ul>
+
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item dropdown mr-3">
+            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+              <i class="fa fa-user"></i> Bienvenido Usuario</a>
+            <div class="dropdown-menu">
+              <a href="profile.html" class="dropdown-item">
+                <i class="fa fa-user-circle"></i> Perfil
+              </a>
+              <a href="settings.html" class="dropdown-item">
+                <i class="fa fa-gear"></i> Configuracion
+              </a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a href="login.html" class="nav-link">
+              <i class="fa fa-user-times"></i> Salir
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header id="main-header" class="py-2 bg-success text-white">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-6">
+          <h1>
+            <i class="fa fa-folder-open-o"></i> Personal</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ACTIONS -->
+  <section id="actions" class="py-4 mb-4 bg-faded">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <a href="#" class="btn btn-success btn-block" data-toggle="modal" data-target="#addManagerModal">
+            <i class="fa fa-plus"></i> Agregar personal</a>
+        </div>
+        <div class="col-md-6 offset-md-6">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Buscar personal...">
+            <span class="input-group-btn">
+              <button class="btn btn-success">Buscar</button>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- dependences -->
+  <section id="personal">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="card">
+            <div class="card-header">
+              <h4>Personal</h4>
+            </div>
+
+          </div>
+          <br>
+          <table id="personalTable" class="table table-striped table-bordered dt-responsive small" style="width: 100%">
+            <thead class="thead-inverse">
+              <tr>
+                <th>#</th>
+                <th>Nombre</th>
+                <th>Apellidos</th>
+                <th>DNI</th>
+                <th>Email</th>
+                <th>Telefono</th>
+                <th>Celular</th>
+                <th>Dependencia</th>
+                <th>Cargo</th>
+                <th>Detalles</th>
+              </tr>
+            </thead>
+            <tbody >
+              <tr>
+                <td>1</td>
+                <td>Jhair Rodrigo</td>
+                <td>Viveros Cordova</td>
+                <td>70406027</td>
+                <td>cherry19966@gmail.com</td>
+                <td>9262213121</td>
+                <td>32423432</td>
+                <td>OSIS</td>
+                <td>Practicante</td>
+                <td>
+                  <a href="details.html" class="btn btn-outline-primary btn-sm">
+                    <i class="fa fa-eye"></i></a>
+                  <a href="details.html" class="btn btn-outline-warning btn-sm">
+                    <i class="fa fa-pencil"></i></a>
+                </td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Daniel</td>
+                <td>Ticona</td>
+                <td>70406027</td>
+                <td>cherry19966@gmail.com</td>
+                <td>9262213121</td>
+                <td>32423432</td>
+                <td>OSIS</td>
+                <td>Practicante</td>
+                <td>
+                  <a href="details.html" class="btn btn-outline-primary btn-sm">
+                    <i class="fa fa-eye"></i></a>
+                  <a href="details.html" class="btn btn-outline-warning btn-sm">
+                    <i class="fa fa-pencil"></i></a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="main-footer" class="bg-inverse text-white mt-5 p-5">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <p class="lead text-center">UNJBG - OSIS</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ADD MANAGER MODAL -->
+
+  <div class="modal fade" id="addManagerModal">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header bg-success text-white">
+          <h5 class="modal-title" id="addManagerModalLabel">Agregar personal</h5>
+          <button class="close" data-dismiss="modal">
+            <span>&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="name" class="form-control-label">Nombre</label>
+              <input type="text" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="email" class="form-control-label">Apellidos</label>
+              <input type="text" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="email" class="form-control-label">DNI</label>
+              <input type="text" class="form-control">
+            </div>
+
+            <div class="form-group">
+              <label for="email" class="form-control-label">Email</label>
+              <input type="text" class="form-control">
+            </div>
+
+            <div class="form-group">
+              <label for="email" class="form-control-label">Telefono</label>
+              <input type="text" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="email" class="form-control-label">Celular</label>
+              <input type="text" class="form-control">
+            </div>
+            <div class="form-group bg-faded p-3">
+              <label for="file">Subir imagen</label>
+              <input type="file" class="form-control-file" id="file">
+              <small id="fileHelp" class="form-text text-muted">
+                Tamaño Maximo 3mb
+              </small>
+            </div>
+
+            <div class="form-group">
+              <label for="category" class="form-control-label">Dependencia donde labora</label>
+              <select class="form-control">
+                <option value="">OSIS</option>
+                <option value="">Comedor</option>
+                <option value="">Facultad de Ingenieria</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="email" class="form-control-label">Nombre del cargo</label>
+              <input type="text" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="body">Descripcion del trabajo</label>
+              <textarea name="editor1" class="form-control"></textarea>
+            </div>
+
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+          <button class="btn btn-success" data-dismiss="modal">Agregar personal</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="js/tether.min.js"></script>
+  <script src="js/bootstrap.min.js" type="text/javascript"></script>
+  <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js" type="text/javascript"></script>
+  <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
+  <script src="https://cdn.datatables.net/responsive/2.2.1/js/dataTables.responsive.min.js"></script>
+  <script src="https://cdn.datatables.net/responsive/2.2.1/js/responsive.bootstrap4.min.js"></script>
+  <script src="https://cdn.datatables.net/buttons/1.5.1/js/dataTables.buttons.min.js"></script>
+  <script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.bootstrap4.min.js"></script>
+  <script type="text/javascript" src="js/datatables.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/pdfmake.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/vfs_fonts.js"></script>
+  <script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.html5.min.js"></script>
+  <script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.print.min.js"></script>
+  <script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.colVis.min.js"></script>
+</body>
+
+</html>

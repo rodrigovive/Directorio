@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+
+    <!--<link rel="stylesheet" href="css/style.css">-->
+    <title>Dashboard</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-toggleable-sm navbar-inverse bg-inverse p-0">
+        <div class="container">
+            <button class="navbar-toggler navbar-toggler-right" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a href="index.html" class="navbar-brand mr-3">Directorio UNJBG</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item px-2">
+                        <a href="index.html" class="nav-link active">Dashboard</a>
+                    </li>
+                    <li class="nav-item px-2">
+                        <a href="dependences.html" class="nav-link">Dependencias</a>
+                    </li>
+                    <li class="nav-item px-2">
+                        <a href="personal.html" class="nav-link">Personal</a>
+                    </li>
+                    <li class="nav-item px-2">
+                        <a href="types.html" class="nav-link">Categoria</a>
+                    </li>
+                    <li class="nav-item px-2">
+                        <a href="users.html" class="nav-link">Usuarios</a>
+                    </li>
+                </ul>
+
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown mr-3">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-user"></i>
+                            Bienvenido Usuario</a>
+                        <div class="dropdown-menu">
+                            <a href="profile.html" class="dropdown-item">
+                                <i class="fa fa-user-circle"></i> Perfil
+                            </a>
+                            <a href="settings.html" class="dropdown-item">
+                                <i class="fa fa-gear"></i> Configuracion
+                            </a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="login.html" class="nav-link">
+                            <i class="fa fa-user-times"></i> Salir
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header id="main-header" class="py-2 bg-primary text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h1>
+                        <i class="fa fa-gear"></i> Dashboard</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ACTIONS -->
+    <section id="actions" class="py-4 mb-4 bg-faded">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <a href="#" class="btn btn-primary btn-block" data-toggle="modal" data-target="#addDependenceModal">
+                        <i class="fa fa-plus"></i> Agregar dependencia</a>
+                </div>
+                <div class="col-md-3">
+                    <a href="#" class="btn btn-success btn-block" data-toggle="modal" data-target="#addManagerModal">
+                        <i class="fa fa-plus"></i> Agregar personal</a>
+                </div>
+                <div class="col-md-3">
+                    <a href="#" class="btn btn-warning btn-block" data-toggle="modal" data-target="#addCategoryModal">
+                        <i class="fa fa-plus"></i> Agregar categoria</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- POSTS -->
+    <section id="posts">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>Ultimos cambios realizados</h4>
+                        </div>
+                        <table class="table table-striped" id="dependenceTabla">
+                            <thead class="thead-inverse">
+                                <tr>
+                                    <th>#</th>
+                                    <th>Dato</th>
+                                    <th>Categoria</th>
+                                    <th>Fecha</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td scope="row">1</td>
+                                    <td>Dependencia</td>
+                                    <td>Edicion</td>
+                                    <td>Abril 04, 2018</td>
+                                    <td>
+                                        <a href="details.html" class="btn btn-secondary">
+                                            <i class="fa fa-angle-double-right"></i> Detalles</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td scope="row">2</td>
+                                    <td>Personal</td>
+                                    <td>Agregado</td>
+                                    <td>Abril 04, 2018</td>
+                                    <td>
+                                        <a href="details.html" class="btn btn-secondary">
+                                            <i class="fa fa-angle-double-right"></i> Detalles</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card text-center card-primary text-white mb-3">
+                        <div class="card-block">
+                            <h3>Dependencias</h3>
+                            <h1 class="display-4">
+                                <i class="fa fa-pencil"></i> 6</h1>
+                            <a href="dependences.html" class="btn btn-sm btn-outline-secondary text-white">View</a>
+                        </div>
+                    </div>
+
+                    <div class="card text-center card-success text-white mb-3">
+                        <div class="card-block">
+                            <h3>Personal</h3>
+                            <h1 class="display-4">
+                                <i class="fa fa-folder-open-o"></i> 4</h1>
+                            <a href="personal.html" class="btn btn-sm btn-outline-secondary text-white">View</a>
+                        </div>
+                    </div>
+
+                    <div class="card text-center card-warning text-white mb-3">
+                        <div class="card-block">
+                            <h3>Categorias</h3>
+                            <h1 class="display-4">
+                                <i class="fa fa-users"></i> 6</h1>
+                            <a href="types.html" class="btn btn-sm btn-outline-secondary text-white">View</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="main-footer" class="bg-inverse text-white mt-5 p-5">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <p class="lead text-center">UNJBG - OSIS</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- ADD DEPENDENCE MODAL -->
+    <div class="modal fade" id="addDependenceModal">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title" id="addDependenceModalLabel">Agregar Dependencia</h5>
+                    <button class="close" data-dismiss="modal">
+                        <span>&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="title" class="form-control-label">Nombre de la dependencia</label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="title" class="form-control-label">Siglas de la dependencia</label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="category" class="form-control-label">Natualeza de la dependencia</label>
+                            <select class="form-control">
+                                <option value="">Control</option>
+                                <option value="">Asesoramiento</option>
+                                <option value="">Apoyo</option>
+                                <option value="">Direccion</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="category" class="form-control-label">Jefe de la dependencia</label>
+                            <select class="form-control">
+                                <option value="">Ing. Osco</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="title" class="form-control-label">Telefono de la dependencia</label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="title" class="form-control-label">Anexo de la dependencia</label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="category" class="form-control-label">Tipo</label>
+                            <select class="form-control">
+                                <option value="">Vicerectorado</option>
+                                <option value="">Oficina</option>
+                                <option value="">Facultad</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="category" class="form-control-label">Dependende</label>
+                            <select class="form-control">
+                                <option value="">OSIS</option>
+                                <option value="">Comedor</option>
+                                <option value="">Facultad de Ingenieria</option>
+                            </select>
+                        </div>
+                        <div class="form-group bg-faded p-3">
+                            <label for="file">Subir imagen</label>
+                            <input type="file" class="form-control-file" id="file">
+                            <small id="fileHelp" class="form-text text-muted">
+                                Tamaño Maximo 3mb
+                            </small>
+                        </div>
+                        <div class="form-group">
+                            <label for="body">Descripcion de la dependencia</label>
+                            <textarea name="editor1" class="form-control"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button class="btn btn-primary" data-dismiss="modal">Agregar Dependencia</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ADD MANAGER MODAL -->
+
+
+    <div class="modal fade" id="addManagerModal">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-success text-white">
+                    <h5 class="modal-title" id="addManagerModalLabel">Agregar personal</h5>
+                    <button class="close" data-dismiss="modal">
+                        <span>&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="name" class="form-control-label">Nombre</label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="form-control-label">Apellidos</label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="form-control-label">DNI</label>
+                            <input type="text" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" class="form-control-label">Email</label>
+                            <input type="text" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" class="form-control-label">Telefono</label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="form-control-label">Celular</label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="form-group bg-faded p-3">
+                            <label for="file">Subir imagen</label>
+                            <input type="file" class="form-control-file" id="file">
+                            <small id="fileHelp" class="form-text text-muted">
+                                Tamaño Maximo 3mb
+                            </small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="category" class="form-control-label">Dependencia donde labora</label>
+                            <select class="form-control">
+                                <option value="">OSIS</option>
+                                <option value="">Comedor</option>
+                                <option value="">Facultad de Ingenieria</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="form-control-label">Nombre del cargo</label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="body">Descripcion del trabajo</label>
+                            <textarea name="editor1" class="form-control"></textarea>
+                        </div>
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button class="btn btn-success" data-dismiss="modal">Agregar personal</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ADD CATEGORY MODAL -->
+
+    <div class="modal fade" id="addCategoryModal">
+
+
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-warning text-white">
+                    <h5 class="modal-title" id="addCategoryModalLabel">Agregar Categoria de Dependencia</h5>
+                    <button class="close" data-dismiss="modal">
+                        <span>&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="title" class="form-control-label">Nombre</label>
+                            <input type="text" class="form-control">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button class="btn btn-warning" data-dismiss="modal">Agregar categoria</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/tether.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <scrip src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></scrip>
+    <scrip src="js/datatables.js"></scrip>
+</body>
+
+</html>

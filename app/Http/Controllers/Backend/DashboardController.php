@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Backend;
 
-use App\Manager;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
-class ManagerController extends Controller
+class DashboardController extends Controller
 {
-    /**
+        /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -15,6 +15,7 @@ class ManagerController extends Controller
     public function index()
     {
         //
+        return view('backend.dashboard');
     }
 
     /**
@@ -41,10 +42,10 @@ class ManagerController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Manager  $manager
+     * @param  \App\NatureDependence  $natureDependence
      * @return \Illuminate\Http\Response
      */
-    public function show(Manager $manager)
+    public function show(NatureDependence $natureDependence)
     {
         //
     }
@@ -52,10 +53,10 @@ class ManagerController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Manager  $manager
+     * @param  \App\NatureDependence  $natureDependence
      * @return \Illuminate\Http\Response
      */
-    public function edit(Manager $manager)
+    public function edit(NatureDependence $natureDependence)
     {
         //
     }
@@ -64,10 +65,10 @@ class ManagerController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Manager  $manager
+     * @param  \App\NatureDependence  $natureDependence
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Manager $manager)
+    public function update(Request $request, NatureDependence $natureDependence)
     {
         //
     }
@@ -75,11 +76,12 @@ class ManagerController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Manager  $manager
+     * @param  \App\NatureDependence  $natureDependence
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Manager $manager)
+    public function destroy(NatureDependence $natureDependence)
     {
         //
     }
+
 }
