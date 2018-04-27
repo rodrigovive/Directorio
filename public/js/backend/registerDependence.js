@@ -78,8 +78,7 @@ var getDataRegisterManager = function () {
     data.email = $("[name='email-manager']").val();
     data.cellphone = $("[name='cellphone-manager']").val();
     data.phone = $("[name='phone-manager']").val();
-    data.titleJob = $("[name='title-job-manager']").val();
-    data.descriptionJob = $("[name='description-job-manager']").val();
+    data.occupation = $("[name='occupation-manager']").val();
     console.log(data);
 }
 

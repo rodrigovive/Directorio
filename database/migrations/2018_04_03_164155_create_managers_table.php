@@ -16,15 +16,14 @@ class CreateManagersTable extends Migration
         Schema::create('managers', function (Blueprint $table) {
             $table->timestamps();
             $table->increments('id');
-            $table->string('dni');
+            $table->string('dni')->unique();
             $table->string('name');
             $table->string('lastname');
-            $table->string('phone');
-            $table->string('cellphone');
-            $table->string('title_job');
-            $table->string('description_job');
-            $table->string('email');
-            $table->string('image');
+            $table->string('phone')->nullable();
+            $table->string('cellphone')->nullable();
+            $table->integer('occupation_id')->unsigned()->index()->nullable();
+            $table->foreign('occupation_id')->references('id')->on('occupation_managers');
+            $table->string('email')->unique()->nullable();
         });
     }
 

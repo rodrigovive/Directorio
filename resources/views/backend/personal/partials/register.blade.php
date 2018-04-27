@@ -40,20 +40,11 @@
             </div>
 
             <div class="form-group">
-              <label for="category" class="form-control-label">Dependencia donde labora</label>
-              <select class="form-control">
-                <option value="">OSIS</option>
-                <option value="">Comedor</option>
-                <option value="">Facultad de Ingenieria</option>
+              <label for="occupation-manager" class="form-control-label">Cargo</label>
+              <select name="occupation-manager" class="form-control">
+                <option value="1">Jefe</option>
+                <option value="2">Secretaria</option>
               </select>
-            </div>
-            <div class="form-group">
-              <label for="title-job-manager" class="form-control-label">Nombre del cargo</label>
-              <input name="title-job-manager" type="text" class="form-control">
-            </div>
-            <div class="form-group">
-              <label for="description-job-manager">Descripcion del trabajo</label>
-              <textarea name="description-job-manager" class="form-control"></textarea>
             </div>
 
           </form>

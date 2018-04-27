@@ -16,8 +16,8 @@ class CreateManagersOccupationTable extends Migration
         Schema::create('occupation_managers', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
-            $table->string('name');
-            $table->string('description');
+            $table->string('name')->unique();
+            $table->string('description')->nullable;
         });
     }
 

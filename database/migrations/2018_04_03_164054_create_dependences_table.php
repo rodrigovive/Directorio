@@ -16,15 +16,15 @@ class CreateDependencesTable extends Migration
         Schema::create('dependences', function (Blueprint $table) {
             $table->timestamps();
             $table->increments('id');
-            $table->string('email');
-            $table->string('acronym');
+            $table->string('email')->nullable();
+            $table->string('acronym')->unique();
             $table->integer('nature_id')->unsigned()->index()->nullable();
             $table->foreign('nature_id')->references('id')->on('nature_dependences');
-            $table->string('annex');
-            $table->string('phone');
-            $table->string('code_dependence');
-            $table->string('dependence');
-            $table->string('description');
+            $table->string('annex')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('code_dependence')->nullable();
+            $table->string('dependence')->nullable();
+            $table->string('description')->nullable();
             $table->integer('category_id')->unsigned()->index()->nullable();
             $table->foreign('category_id')->references('id')->on('category_dependences');
             $table->integer('level_id')->unsigned()->index()->nullable();

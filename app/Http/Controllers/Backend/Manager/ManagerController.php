@@ -45,9 +45,8 @@ class ManagerController extends Controller
             'phone' => $request->phone,
             'cellphone' => $request->cellphone,
             'email' => $request->email,
-            'title_job' => $request->title_job,
             'dni' => $request->dni,
-            'description_job' => $request->description
+            'occupation_id' => $request->occupation
         ];
         $rules = [
             'name' => 'required|max:255',

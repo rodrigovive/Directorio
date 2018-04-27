@@ -16,7 +16,7 @@ class CreateCategoryDependencesTable extends Migration
         Schema::create('category_dependences', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
-            $table->string('name');
+            $table->string('name')->unique();
         });
     }
 
