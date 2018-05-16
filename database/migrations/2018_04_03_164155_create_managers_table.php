@@ -24,6 +24,8 @@ class CreateManagersTable extends Migration
             $table->integer('occupation_id')->unsigned()->index()->nullable();
             $table->foreign('occupation_id')->references('id')->on('occupation_managers');
             $table->string('email')->unique()->nullable();
+            $table->integer('dependence_id')->unsigned()->index()->nullable();
+            $table->foreign('dependence_id')->references('id')->on('dependences');
         });
     }
 

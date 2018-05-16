@@ -5,6 +5,9 @@ use Validator;
 use App\Models\Dependence;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\NatureDependence;
+use App\Models\CategoryDependence;
+use App\Models\Manager;
 
 class DependenceController extends Controller
 {
@@ -16,7 +19,16 @@ class DependenceController extends Controller
     public function index()
     {
         //
-        return view('backend.dependences.index');
+        $natures = NatureDependence::all();
+        $categories = CategoryDependence::all();
+        $managers = Manager::all();
+        $dependences = Dependence::query()
+            ->join('managers', 'dependences.id', '=', 'managers.dependence_id')
+            ->where('managers.occupation_id',1)
+            ->select('dependences.*', 'managers.name as manager','managers.occupation_id')
+            ->get();
+
+        return view('backend.dependences.index',compact('natures','managers','categories','dependences'));
     }
 
     /**
@@ -58,8 +70,9 @@ class DependenceController extends Controller
             'code_dependence' => $request->code_dependence,
         ];
         $rules = [
-            'name' => 'required|max:255',
-            'acronym' => 'required|max:40',
+            'name' => 'required|max:255|unique:dependences',
+            'acronym' => 'required|max:40|unique:dependences',
+
         ];
         $messages = [
             'name'    => 'El nombre no esta completado.',

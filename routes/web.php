@@ -15,46 +15,47 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::prefix('/admin')->group(function(){
-    
+
+Route::group(['namespace' => 'Backend', 'prefix' => 'admin', 'as' => 'backend.'], function () {
+
     Route::resource(
         '/',
-        'Backend\DashboardController',
+        'DashboardController',
         [
             'names' =>
                 [
-                'index' => 'dashboard.index',
-            ]
+                    'index' => 'dashboard.index',
+                ]
         ]
     );
 
     Route::resource(
         '/dependencias',
-        'Backend\Dependence\DependenceController',
+        'Dependence\DependenceController',
         [
             'names' =>
                 [
-                'store' => 'dependence.build',
-                'index' => 'dependence.index',
-            ]
+                    'store' => 'dependence.build',
+                    'index' => 'dependence.index',
+                ]
         ]
     );
-    
+
     Route::resource(
         '/personal',
-        'Backend\Manager\ManagerController',
+        'Manager\ManagerController',
         [
             'names' =>
                 [
-                'store' => 'manager.build',
-                'index' => 'manager.index',
-            ]
+                    'store' => 'manager.build',
+                    'index' => 'manager.index',
+                ]
         ]
     );
 
     Route::resource(
         '/tipos',
-        'Backend\Dependence\CategoryDependenceController',
+        'Dependence\CategoryDependenceController',
         [
             'names' =>
                 [
@@ -68,6 +69,16 @@ Route::prefix('/admin')->group(function(){
 });
 
 
-Auth::routes();
+$this->get('admin/login', 'Auth\LoginController@showLoginForm')->name('login');
 
-Route::get('/home', 'HomeController@index')->name('home');
+$this->post('admin/login', 'Auth\LoginController@login');
+
+$this->get('admin/logout', 'Auth\LoginController@logout')->name('logout');
+
+Route::group(['namespace' => 'Frontend', 'as' => 'frontend.'], function () {
+
+    Route::get('/', 'IndexController@index')->name('index');
+
+    Route::get('/personal','Manager\ManagerController@ManagerApi')->name('manager');
+
+});

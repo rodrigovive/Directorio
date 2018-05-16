@@ -17,7 +17,9 @@ trait HasManagerRelationship
 
     public function managers()
     {
-        return $this->belongsToMany(Manager::class);
+        return $this->hasMany(Manager::class);
     }
+
+
 
 }

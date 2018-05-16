@@ -8,16 +8,18 @@
 
 namespace App\Models\Traits\Relationship;
 
+use App\Models\Dependence;
 use App\Models\OccupationManager;
-/**
- * Class DependenceRelationship.
- */
+
 trait ManagerRelationship
 {
 
     public function occupation()
     {
-        return $this->belongsToMany(OccupationManager::class);
+        return $this->belongsTo(OccupationManager::class);
     }
 
+    public  function dependence(){
+        return $this->belongsTo(Dependence::class);
+    }
 }

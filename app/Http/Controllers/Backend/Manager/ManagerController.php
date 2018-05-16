@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Backend\Manager;
 
+use Validator;
 use App\Models\Manager;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -17,7 +18,8 @@ class ManagerController extends Controller
     public function index()
     {
         //
-        return view('backend.personal.index');
+        $managers = Manager::all();
+        return view('backend.personal.index',compact('managers'));
     }
 
     /**
@@ -46,7 +48,8 @@ class ManagerController extends Controller
             'cellphone' => $request->cellphone,
             'email' => $request->email,
             'dni' => $request->dni,
-            'occupation_id' => $request->occupation
+            'occupation_id' => $request->occupation,
+            'dependence_id' => $request->dependence,
         ];
         $rules = [
             'name' => 'required|max:255',
@@ -61,7 +64,7 @@ class ManagerController extends Controller
         $validator = Validator::make($dataResponse, $rules, $messages);
 
         if ($validator->fails()) {
-            return response()->json(['error'=>$validator->errors()]);
+            return response()->json(['error'=>$validator->errors(),'data' => $dataResponse]);
         }
         $managerCreated = Manager::create($dataResponse);
 
@@ -116,4 +119,5 @@ class ManagerController extends Controller
     {
         //
     }
+
 }

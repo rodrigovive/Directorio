@@ -8,7 +8,6 @@ $(document).ready(function () {
         .appendTo('#dependenceTable_wrapper .col-md-6:eq(0)');
 
 
-
     var personalTable = $('#personalTable').DataTable({
         lengthChange: false,
         buttons: ['copy', 'excel', 'pdf', 'colvis']
@@ -25,4 +24,6 @@ $(document).ready(function () {
 
     categoryTable.buttons().container()
         .appendTo('#categoryTable_wrapper .col-md-6:eq(0)');
+
+
 })

@@ -50,6 +50,25 @@
               </tr>
             </thead>
             <tbody>
+            @foreach($dependences as $key => $dependence)
+              <tr>
+                <td>{{$key}}</td>
+                <td>{{$dependence->name}}</td>
+                <td>{{$dependence->acronym}}</td>
+                <td>{{$dependence->nature->name}}</td>
+                <td>{{$dependence->manager}}</td>
+                <td>{{$dependence->phone}}</td>
+                <td>{{$dependence->annex}}</td>
+                <td>{{$dependence->category->name}}</td>
+                <td>X</td>
+                <td>
+                  <a href="details.html" class="btn btn-outline-primary btn-sm">
+                    <i class="fa fa-eye"></i></a>
+                  <a href="details.html" class="btn btn-outline-warning btn-sm">
+                    <i class="fa fa-pencil"></i></a>
+                </td>
+              </tr>
+              @endforeach
               <tr>
                 <td>1</td>
                 <td>Oficina de Sistemas y Informacion</td>
@@ -106,7 +125,6 @@
   <script src="https://cdn.datatables.net/responsive/2.2.1/js/responsive.bootstrap4.min.js"></script>
   <script src="https://cdn.datatables.net/buttons/1.5.1/js/dataTables.buttons.min.js"></script>
   <script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.bootstrap4.min.js"></script>
-  <script type="text/javascript" src="{{asset('js/datatables.js')}}"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/pdfmake.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/vfs_fonts.js"></script>

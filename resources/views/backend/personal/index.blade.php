@@ -34,46 +34,32 @@
                 <th>Email</th>
                 <th>Telefono</th>
                 <th>Celular</th>
-                <th>Dependencia</th>
                 <th>Cargo</th>
+                  <th>Dependencia</th>
                 <th>Detalles</th>
               </tr>
             </thead>
             <tbody >
-              <tr>
-                <td>1</td>
-                <td>Jhair Rodrigo</td>
-                <td>Viveros Cordova</td>
-                <td>70406027</td>
-                <td>cherry19966@gmail.com</td>
-                <td>9262213121</td>
-                <td>32423432</td>
-                <td>OSIS</td>
-                <td>Practicante</td>
-                <td>
-                  <a href="details.html" class="btn btn-outline-primary btn-sm">
-                    <i class="fa fa-eye"></i></a>
-                  <a href="details.html" class="btn btn-outline-warning btn-sm">
-                    <i class="fa fa-pencil"></i></a>
-                </td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>Daniel</td>
-                <td>Ticona</td>
-                <td>70406027</td>
-                <td>cherry19966@gmail.com</td>
-                <td>9262213121</td>
-                <td>32423432</td>
-                <td>OSIS</td>
-                <td>Practicante</td>
-                <td>
-                  <a href="details.html" class="btn btn-outline-primary btn-sm">
-                    <i class="fa fa-eye"></i></a>
-                  <a href="details.html" class="btn btn-outline-warning btn-sm">
-                    <i class="fa fa-pencil"></i></a>
-                </td>
-              </tr>
+                @foreach($managers as $key => $manager)
+                    <tr>
+                        <td>{{$manager->id}}</td>
+                        <td>{{$manager->name}}</td>
+                        <td>{{$manager->lastname}}</td>
+                        <td>{{$manager->dni}}</td>
+                        <td>{{$manager->email}}</td>
+                        <td>{{$manager->cellphone}}</td>
+                        <td>{{$manager->phone}}</td>
+                        <td>{{$manager->occupation->name}}</td>
+                        <td>{{$manager->dependence->acronym}}</td>
+    
+                        <td>
+                            <a href="details.html" class="btn btn-outline-primary btn-sm">
+                                <i class="fa fa-eye"></i></a>
+                            <a href="details.html" class="btn btn-outline-warning btn-sm">
+                                <i class="fa fa-pencil"></i></a>
+                        </td>
+                    </tr>
+                @endforeach
             </tbody>
           </table>
         </div>

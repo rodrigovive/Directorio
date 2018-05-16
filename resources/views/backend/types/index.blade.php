@@ -31,14 +31,12 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>1</td>
-                <td>Oficina</td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>Facultad</td>
-              </tr>
+                @foreach($categoryDependence as $key => $category)
+                    <tr>
+                        <td>{{$category->id}}</td>
+                        <td>{{$category->name}}</td>
+                    </tr>
+                @endforeach
             </tbody>
           </table>
 

@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
             ManagerOccupationTable::class,
             CategoryDependenceTableSeeder::class,
             NatureDependenceTableSeeder::class,
+            UserTableSeeder::class,
         ]);
     }
 }

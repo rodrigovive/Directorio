@@ -4,17 +4,18 @@ namespace App\Models\Traits\Relationship;
 
 use App\Models\CategoryDependence;
 use App\Models\LevelDependence;
-use App\Models\NatureDependence;
 use App\Models\Manager;
+use App\Models\NatureDependence;
+
 /**
  * Class DependenceRelationship.
  */
 trait DependenceRelationship
 {
 
-    public function managers()
+    public function manager()
     {
-        return $this->belongsToMany(Manager::class);
+        return $this->hasMany(Manager::class);
     }
 
     public function level()
@@ -26,6 +27,7 @@ trait DependenceRelationship
     {
         return $this->belongsTo(CategoryDependence::class);
     }
+
     public function nature()
     {
         return $this->belongsTo(NatureDependence::class);

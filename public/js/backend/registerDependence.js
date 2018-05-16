@@ -3,6 +3,7 @@ $("#submit-dependence").on("click",function (e) {
     e.preventDefault();
     e.stopPropagation();
     var data = getDataRegisterDependence();
+    ajaxDependence(data);
 })
 
 var getDataRegisterDependence = function (){
@@ -15,7 +16,7 @@ var getDataRegisterDependence = function (){
     data.phone = $("[name='phone-dependence']").val();
     data.annex = $("[name='annex-dependence']").val();
     data.category = $("[name='category-dependence']").val();
-    data.dependence = $("[name='dependence-dependence']").val();
+    // data.dependence = $("[name='dependence-dependence']").val();
     data.description = $("[name='description-dependence']").val();
     console.log(data);
     return data;
@@ -79,7 +80,9 @@ var getDataRegisterManager = function () {
     data.cellphone = $("[name='cellphone-manager']").val();
     data.phone = $("[name='phone-manager']").val();
     data.occupation = $("[name='occupation-manager']").val();
-    console.log(data);
+    data.dependence = $("[name='dependence-manager']").val();
+
+    return data;
 }
 
 
@@ -87,7 +90,8 @@ $("#submit-manager").on("click",function (e) {
     e.preventDefault();
     e.stopPropagation();
     var data = getDataRegisterManager();
-    // ajaxManager(data);
+    console.log(data);
+    ajaxManager(data);
 });
 
 var ajaxManager = function(data){

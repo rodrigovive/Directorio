@@ -46,6 +46,13 @@
                 <option value="2">Secretaria</option>
               </select>
             </div>
+  
+            <div class="form-group">
+              <label for="dependence-manager" class="form-control-label">Dependencia</label>
+              <select name="dependence-manager" class="form-control">
+                <option value="1">OSIS</option>
+              </select>
+            </div>
 
           </form>
         </div>

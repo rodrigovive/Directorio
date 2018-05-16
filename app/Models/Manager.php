@@ -9,10 +9,9 @@ use App\Models\Traits\Relationship\ManagerRelationship;
 class Manager extends Model
 {
     //
-    use HasManyDependenceRelationship;
     use ManagerRelationship;
     protected $fillable = [
-        'name', 'lastname', 'phone', 'cellphone', 'email','occupation_id','dni'
+        'name', 'lastname', 'phone', 'cellphone', 'email','occupation_id','dni','dependence_id'
     ];
 
 }

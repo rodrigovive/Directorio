@@ -18,7 +18,8 @@ class CategoryDependenceController extends Controller
     public function index()
     {
         //
-        return view('backend.types.index');
+        $categoryDependence = CategoryDependence::all();
+        return view('backend.types.index',compact('categoryDependence'));
     }
 
     /**

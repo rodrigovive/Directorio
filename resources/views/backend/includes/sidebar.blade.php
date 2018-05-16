@@ -3,12 +3,9 @@
         <button class="navbar-toggler navbar-toggler-right" data-toggle="collapse" data-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <a href="index.html" class="navbar-brand mr-3">Directorio UNJBG</a>
+        <a href="/admin" class="navbar-brand mr-3">Directorio UNJBG</a>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
-                <li class="nav-item px-2">
-                    <a href="/admin" class="nav-link active">Mantenimiento</a>
-                </li>
                 <li class="nav-item px-2">
                     <a href="/admin/dependencias" class="nav-link">Dependencias</a>
                 </li>
@@ -20,6 +17,9 @@
                 </li>
                 <li class="nav-item px-2">
                     <a href="/admin/usuarios" class="nav-link">Usuarios</a>
+                </li>
+                <li class="nav-item px-2">
+                    <a href="/admin/cargos" class="nav-link">Cargos</a>
                 </li>
             </ul>
 

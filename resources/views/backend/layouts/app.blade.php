@@ -32,6 +32,8 @@
     <script src="{{asset('js/bootstrap.min.js')}}"></script>
 
     @yield('after-scripts')
+    <script type="text/javascript" src="{{asset('js/backend/datatables.js')}}"></script>
+
 
 </body>
 
