@@ -17,7 +17,7 @@ class CreateDependencesTable extends Migration
             $table->timestamps();
             $table->increments('id');
             $table->string('email')->nullable();
-            $table->string('acronym')->unique();
+            $table->string('acronym')->unique()->nullable();
             $table->string('name')->unique();
             $table->integer('nature_id')->unsigned()->index()->nullable();
             $table->foreign('nature_id')->references('id')->on('nature_dependences');

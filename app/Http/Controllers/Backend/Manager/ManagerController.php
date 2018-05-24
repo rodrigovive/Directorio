@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\Backend\Manager;
 
+use App\Models\Dependence;
 use Validator;
 use App\Models\Manager;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\OccupationManager;
 
 
 class ManagerController extends Controller
@@ -18,8 +20,10 @@ class ManagerController extends Controller
     public function index()
     {
         //
+        $occupations = OccupationManager::all();
         $managers = Manager::all();
-        return view('backend.personal.index',compact('managers'));
+        $dependences = Dependence::all();
+        return view('backend.personal.index',compact('managers','dependences','occupations'));
     }
 
     /**
@@ -54,7 +58,6 @@ class ManagerController extends Controller
         $rules = [
             'name' => 'required|max:255',
             'lastname' => 'required|max:255',
-            'dni' => 'required|unique:managers|max:8',
         ];
         $messages = [
             'name'    => 'El nombre no esta completado.',

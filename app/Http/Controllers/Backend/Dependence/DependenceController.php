@@ -71,7 +71,7 @@ class DependenceController extends Controller
         ];
         $rules = [
             'name' => 'required|max:255|unique:dependences',
-            'acronym' => 'required|max:40|unique:dependences',
+            'acronym' => 'max:40|unique:dependences',
 
         ];
         $messages = [

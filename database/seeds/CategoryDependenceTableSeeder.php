@@ -50,6 +50,12 @@ class CategoryDependenceTableSeeder extends Seeder
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
 
             ]);
+            DB::table('category_dependences')->insert([
+                'name' => 'Escuela',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+
+            ]);
         }
     }
 }

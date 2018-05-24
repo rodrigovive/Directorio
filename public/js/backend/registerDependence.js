@@ -16,6 +16,7 @@ var getDataRegisterDependence = function (){
     data.phone = $("[name='phone-dependence']").val();
     data.annex = $("[name='annex-dependence']").val();
     data.category = $("[name='category-dependence']").val();
+    data.email = $("[name='email-dependence']").val();
     // data.dependence = $("[name='dependence-dependence']").val();
     data.description = $("[name='description-dependence']").val();
     console.log(data);

@@ -42,25 +42,21 @@
                 <th>Sigla</th>
                 <th>Naturaleza</th>
                 <th>Jefe</th>
-                <th>Telefono</th>
                 <th>Anexo</th>
                 <th>Categoria</th>
-                <th>Dependencia</th>
                 <th>Detalles</th>
               </tr>
             </thead>
             <tbody>
             @foreach($dependences as $key => $dependence)
               <tr>
-                <td>{{$key}}</td>
+                <td>{{$key+1}}</td>
                 <td>{{$dependence->name}}</td>
                 <td>{{$dependence->acronym}}</td>
                 <td>{{$dependence->nature->name}}</td>
                 <td>{{$dependence->manager}}</td>
-                <td>{{$dependence->phone}}</td>
                 <td>{{$dependence->annex}}</td>
                 <td>{{$dependence->category->name}}</td>
-                <td>X</td>
                 <td>
                   <a href="details.html" class="btn btn-outline-primary btn-sm">
                     <i class="fa fa-eye"></i></a>
@@ -69,40 +65,7 @@
                 </td>
               </tr>
               @endforeach
-              <tr>
-                <td>1</td>
-                <td>Oficina de Sistemas y Informacion</td>
-                <td>OSIS</td>
-                <td>Control</td>
-                <td>Ing. Osco</td>
-                <td>2312313</td>
-                <td>312321</td>
-                <td>Oficina</td>
-                <td>X</td>
-                <td>
-                  <a href="details.html" class="btn btn-outline-primary btn-sm">
-                    <i class="fa fa-eye"></i></a>
-                  <a href="details.html" class="btn btn-outline-warning btn-sm">
-                    <i class="fa fa-pencil"></i></a>
-                </td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>Escuela de Ingenieria Informatica y Sistemas</td>
-                <td>ESIS</td>
-                <td>Control</td>
-                <td>Ing. Hinojosa</td>
-                <td>123213</td>
-                <td>1231231</td>
-                <td>Escuela</td>
-                <td>FAIN</td>
-                <td>
-                  <a href="details.html" class="btn btn-outline-primary btn-sm">
-                    <i class="fa fa-eye"></i></a>
-                  <a href="details.html" class="btn btn-outline-warning btn-sm">
-                    <i class="fa fa-pencil"></i></a>
-                </td>
-              </tr>
+              
 
             </tbody>
           </table>

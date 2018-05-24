@@ -28,12 +28,8 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="manager-dependence" class="form-control-label">Jefe de la dependencia</label>
-                        <select class="form-control" name="manager-dependence">
-                            @foreach($managers as $manager)
-                                <option value="{{$manager->id}}">{{$manager->name}} {{$manager->lastname}}</option>
-                            @endforeach
-                        </select>
+                        <label for="email-dependence" class="form-control-label">Email de la dependencia</label>
+                        <input type="text" name="email-dependence" class="form-control">
                     </div>
                     <div class="form-group">
                         <label for="phone-dependence" class="form-control-label">Telefono de la dependencia</label>

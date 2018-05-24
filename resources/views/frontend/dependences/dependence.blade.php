@@ -9,39 +9,30 @@
                 <table id="dependenceTable" class="table table-striped table-bordered dt-responsive small" style="width: 100%">
                     <thead class="thead-inverse">
                     <tr>
+                        <th>#</th>
                         <th>Nombre</th>
                         <th>Sigla</th>
+                        <th>Email</th>
                         <th>Naturaleza</th>
-                        <th>Jefe</th>
-                        <th>Telefono</th>
                         <th>Anexo</th>
                         <th>Categoria</th>
-                        <th>Dependencia</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td>Oficina de Sistemas y Informacion</td>
-                        <td>OSIS</td>
-                        <td>Control</td>
-                        <td>Ing. Osco</td>
-                        <td>2312313</td>
-                        <td>312321</td>
-                        <td>Oficina</td>
-                        <td>X</td>
+                    @foreach($dependences as $key => $dependence)
+                        <tr>
+                            <td>{{$key+1}}</td>
+                            <td>{{$dependence->name}}</td>
+                            <td>{{$dependence->acronym}}</td>
+                            <td>{{$dependence->email}}</td>
+                            <td>{{$dependence->nature->name}}</td>
+                            <td>{{$dependence->annex}}</td>
+                            <td>{{$dependence->category->name}}</td>
+    
+                        </tr>
+                        @endforeach
                     
-                    </tr>
-                    <tr>
-                        <td>Escuela de Ingenieria Informatica y Sistemas</td>
-                        <td>ESIS</td>
-                        <td>Control</td>
-                        <td>Ing. Hinojosa</td>
-                        <td>123213</td>
-                        <td>1231231</td>
-                        <td>Escuela</td>
-                        <td>FAIN</td>
                     
-                    </tr>
                     
                     </tbody>
                 </table>

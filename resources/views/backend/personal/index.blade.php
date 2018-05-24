@@ -32,7 +32,6 @@
                 <th>Apellidos</th>
                 <th>DNI</th>
                 <th>Email</th>
-                <th>Telefono</th>
                 <th>Celular</th>
                 <th>Cargo</th>
                   <th>Dependencia</th>
@@ -48,7 +47,6 @@
                         <td>{{$manager->dni}}</td>
                         <td>{{$manager->email}}</td>
                         <td>{{$manager->cellphone}}</td>
-                        <td>{{$manager->phone}}</td>
                         <td>{{$manager->occupation->name}}</td>
                         <td>{{$manager->dependence->acronym}}</td>
     
@@ -80,7 +78,6 @@
   <script src="https://cdn.datatables.net/responsive/2.2.1/js/responsive.bootstrap4.min.js"></script>
   <script src="https://cdn.datatables.net/buttons/1.5.1/js/dataTables.buttons.min.js"></script>
   <script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.bootstrap4.min.js"></script>
-  <script type="text/javascript" src="{{asset('js/datatables.js')}}"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/pdfmake.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/vfs_fonts.js"></script>

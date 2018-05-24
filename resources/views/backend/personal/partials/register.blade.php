@@ -42,15 +42,18 @@
             <div class="form-group">
               <label for="occupation-manager" class="form-control-label">Cargo</label>
               <select name="occupation-manager" class="form-control">
-                <option value="1">Jefe</option>
-                <option value="2">Secretaria</option>
+                @foreach($occupations as $occupation)
+                  <option value="{{$occupation->id}}">{{$occupation->name}}</option>
+                @endforeach
               </select>
             </div>
   
             <div class="form-group">
               <label for="dependence-manager" class="form-control-label">Dependencia</label>
               <select name="dependence-manager" class="form-control">
-                <option value="1">OSIS</option>
+                @foreach($dependences as $dependence)
+                  <option value="{{$dependence->id}}">{{$dependence->name}}</option>
+                @endforeach
               </select>
             </div>
 

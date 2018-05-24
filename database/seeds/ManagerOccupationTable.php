@@ -29,6 +29,27 @@ class ManagerOccupationTable extends Seeder
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
 
             ]);
+            DB::table('occupation_managers')->insert([
+                'name' => 'Tecnico',
+                'description' => 'Encargado de la dependencia',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+
+            ]);
+            DB::table('occupation_managers')->insert([
+                'name' => 'Especialista',
+                'description' => 'Especialista de la dependencia',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+            ]);
+            DB::table('occupation_managers')->insert([
+                'name' => 'Trabajador',
+                'description' => 'Trabajador de la dependencia',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+
+            ]);
+
         }
     }
 }
