@@ -79,6 +79,20 @@ Route::group(['namespace' => 'Frontend', 'as' => 'frontend.'], function () {
 
     Route::get('/', 'IndexController@index')->name('index');
 
-    Route::get('/personal','Manager\ManagerController@ManagerApi')->name('manager');
+    Route::get('/personal', 'Manager\ManagerController@ManagerApi')->name('manager');
+
+});
+
+Route::group(['namespace' => 'Backend', 'as' => 'api.', 'prefix' => 'api'], function () {
+
+    Route::group(['as' => 'dependence.', 'prefix' => 'dependence', 'namespace' => 'Dependence'], function () {
+
+        Route::get('all', 'ApiDependenceController@all')->name('all');
+
+    });
+
+    Route::get('/', 'IndexController@index')->name('index');
+
+    Route::get('/personal', 'Manager\ManagerController@ManagerApi')->name('manager');
 
 });

@@ -54,10 +54,10 @@
         <div class="row">
             
             <div class="col-md-8">
-                <input type="text" class="form-control form-control-lg" placeholder="Buscar ...">
+                <input type="text" class="form-control form-control-lg" name="search-input" placeholder="Buscar ...">
             </div>
             <div class="col-md-4">
-                <button class="btn btn-primary btn-lg btn-block">
+                <button type="button" id="search-data" class="btn btn-primary btn-lg btn-block">
                     <i class="fa fa-envelope-open-o"></i> Buscar</button>
             </div>
         </div>

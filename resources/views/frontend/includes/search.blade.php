@@ -7,7 +7,7 @@
                 <input type="text" id="input-tags" class="form-control form-control-lg" placeholder="Buscar ...">
             </div>
             <div class="col-md-4">
-                <button class="btn btn-primary btn-lg btn-block">
+                <button type="button" id="search-data" class="btn btn-primary btn-lg btn-block">
                     <i class="fa fa-search"></i> Buscar</button>
             </div>
         </div>
