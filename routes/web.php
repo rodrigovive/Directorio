@@ -16,7 +16,7 @@ Route::get('/', function () {
 });
 
 
-Route::group(['namespace' => 'Backend', 'prefix' => 'admin', 'as' => 'backend.'], function () {
+Route::group(['namespace' => 'Backend', 'prefix' => 'admin', 'as' => 'backend.', 'middleware' => 'auth'], function () {
 
     Route::resource(
         '/',

@@ -7,6 +7,7 @@
                 <input type="text" id="input-tags" class="form-control form-control-lg" placeholder="Buscar ...">
             </div>
             <div class="col-md-4">
+                
                 <button type="button" id="search-data" class="btn btn-primary btn-lg btn-block">
                     <i class="fa fa-search"></i> Buscar</button>
             </div>
@@ -37,6 +38,7 @@
             <div class="col-md-3">
                 <div class="form-check form-check-inline">
                     <label class="form-check-label">
+                        
                         <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">Dependencia
                     </label>
                 </div>

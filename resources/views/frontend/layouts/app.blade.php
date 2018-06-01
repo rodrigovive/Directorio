@@ -29,10 +29,12 @@
 
 <!-- ABOUT / WHY SECTION -->
 
+
 @yield('content')
 
 
 @include('frontend.includes.footer')
+
 
 <script src="{{asset('js/frontend/jquery.min.js')}}"></script>
 <script src="{{asset('js/frontend/popper.min.js')}}"></script>

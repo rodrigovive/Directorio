@@ -4,6 +4,10 @@ namespace App\Http\Controllers\Backend;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\NatureDependence;
+use App\Models\CategoryDependence;
+use App\Models\OccupationManager;
+use App\Models\Dependence;
 
 class DashboardController extends Controller
 {
@@ -15,7 +19,11 @@ class DashboardController extends Controller
     public function index()
     {
         //
-        return view('backend.dashboard');
+        $natures = NatureDependence::all();
+        $categories = CategoryDependence::all();
+        $occupations = OccupationManager::all();
+        $dependences = Dependence::all();
+        return view('backend.dashboard',compact('natures','categories','occupations','dependences'));
     }
 
     /**
